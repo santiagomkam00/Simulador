@@ -7,17 +7,17 @@ while(respuesta!=2){
         switch(catalogo){
             case 1:
                 let catalogo_classic=parseInt(prompt("¿Cuántos días quiere alquilar el vehículo Chevrolet Classic?"))
-                contador += 10*catalogo_classic
+                contador = 10*catalogo_classic
                 alert("El valor es $"+contador)
                 break;
             case 2:
                 let catalogo_hilux=parseInt(prompt("¿Cuántos días quiere alquilar el vehículo Toyota Hilux?"))
-                contador += 20*catalogo_hilux
+                contador = 20*catalogo_hilux
                 alert("El valor es $"+contador)
                 break;
             case 3:
-                catalogo_corolla=parseInt(prompt("¿Cuántos días quiere alquilar el vehículo Toyota Corolla?"))
-                contador += 15*catalogo_corolla
+                let catalogo_corolla=parseInt(prompt("¿Cuántos días quiere alquilar el vehículo Toyota Corolla?"))
+                contador = 15*catalogo_corolla
                 alert("El valor es $"+contador)
                 break;
 
