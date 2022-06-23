@@ -33,9 +33,9 @@
 //     respuesta=parseInt(prompt("Ingrese opcion 2 para salir o 1 para volver a inicio"))
 // }
 
-const autos = []
+const carros = []
 
-class Auto{
+class Autos{
     constructor(tipo,modelo,valor){
         this.tipo = tipo
         this.modelo = modelo
@@ -45,25 +45,37 @@ class Auto{
 }
 
 function generadorAutos(){
-    autos.push(new Auto("SEDAN","CHEVROLET CLASSIC",10))
-    autos.push(new Auto("SEDAN","ALFA ROMEO - GIULIA",50))
-    autos.push(new Auto("SEDAN","AUDI - A4",30))
-    autos.push(new Auto("SEDAN","BMW - SERIE 3",40))
-    autos.push(new Auto("SUV","TOYOTA - COROLLA CROSS",30))
+    carros.push(new Autos("SEDAN","CHEVROLET CLASSIC",10))
+    carros.push(new Autos("SEDAN","ALFA ROMEO - GIULIA",50))
+    carros.push(new Autos("SEDAN","AUDI - A4",30))
+    carros.push(new Autos("SEDAN","BMW - SERIE 3",40))
+    carros.push(new Autos("SUV","TOYOTA - COROLLA CROSS",30))
 }
 
-const listarAutos = (autos) => console.table(autos)
+// const listarAutos = (autos) => console.table(autos)
 
 generadorAutos()
+// debugger
+// listarAutos(autos)
+
+// function elegirAuto(){
+//     let eleccion = prompt("Ingrese el modelo que quiere alquilar:").toUpperCase()
+//     let resultado = autos.find((auto)=>auto.modelo.includes(eleccion))
+//     console.clear
+//     console.table(resultado)
+//     console.info("Pagas: $"+resultado.valor+" por día")
+// }
+
+// elegirAuto()
+const listarAutos = document.getElementById("autosdispo")
 debugger
-listarAutos(autos)
-
-function elegirAuto(){
-    let eleccion = prompt("Ingrese el modelo que quiere alquilar:").toUpperCase()
-    let resultado = autos.find((auto)=>auto.modelo.includes(eleccion))
-    console.clear
-    console.table(resultado)
-    console.info("Pagas: $"+resultado.valor+" por día")
-}
-
-elegirAuto()
+function cartillaAutos(){
+    for (const auto of carros){
+        const li = document.createElement("li")
+        li.className = "list-group-item"
+        li.innerHTML = auto.modelo
+        li.addEventListener("click", () => {alert("sale ",auto.valor)})
+        listarAutos.append(li)
+    }
+} 
+cartillaAutos()
