@@ -74,7 +74,7 @@ function cartillaAutos(){
         const li = document.createElement("li")
         li.className = "list-group-item"
         li.innerHTML = auto.modelo
-        li.addEventListener("click", () => {alert("sale ",auto.valor)})
+        li.addEventListener("click", () => {alert(`el valor por dia es de $${auto.valor}usd`)})
         listarAutos.append(li)
     }
 } 
