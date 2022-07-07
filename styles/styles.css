@@ -19,6 +19,7 @@ li{
 .contenedor-autos .autos-card{
     width: 90%;
     height: 25vh;
+    cursor: pointer;
 }
 .contenedor-autos .autos-card{
     margin: 5px;
