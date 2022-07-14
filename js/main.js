@@ -34,7 +34,6 @@ function cartillaAutos(){
         div.addEventListener("dblclick", () => {carrito.push(auto.modelo)
             guardarAuto(auto)})
         autosDisponibles.append(div)
-        
     }
 } 
 cartillaAutos()
@@ -59,6 +58,12 @@ function mostrarAuto(){
 }
 
 mostrarAuto()
+
+const mostrarSwal = () => {Swal.fire({
+    title:'Aqui se mostrará un cuadro de confirmacion',
+    text: 'De confirmarse, se agregará al carrito',
+    icon: 'info'
+})}
     
 
 
