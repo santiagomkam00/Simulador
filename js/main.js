@@ -1,22 +1,24 @@
 const carros = []
 const carrito = []
+let seleccion = []
 
 class Autos{
-    constructor(tipo,modelo,valor){
+    constructor(tipo,modelo,valor,img){
         this.tipo = tipo
         this.modelo = modelo
         this.valor = valor
+        this.img = img
     }
 
 }
 
 function generadorAutos(){
-    carros.push(new Autos("SEDAN","CHEVROLET CLASSIC",10))
-    carros.push(new Autos("SEDAN","ALFA ROMEO - GIULIA",50))
-    carros.push(new Autos("SEDAN","AUDI - A4",30))
-    carros.push(new Autos("SEDAN","BMW - SERIE 3",40))
-    carros.push(new Autos("SUV","TOYOTA - COROLLA CROSS",30))
-    carros.push(new Autos("SEDAN","VOLKSWAGEN - GOL",20))
+    carros.push(new Autos("SEDAN","CHEVROLET CLASSIC",10,"./media/cocheprueba.png"))
+    carros.push(new Autos("SEDAN","ALFA ROMEO - GIULIA",50,"./media/cocheprueba.png"))
+    carros.push(new Autos("SEDAN","AUDI - A4",30,"./media/cocheprueba.png"))
+    carros.push(new Autos("SEDAN","BMW - SERIE 3",40,"./media/cocheprueba.png"))
+    carros.push(new Autos("SUV","TOYOTA - COROLLA CROSS",30,"./media/cocheprueba.png"))
+    carros.push(new Autos("SEDAN","VOLKSWAGEN - GOL",20,"./media/cocheprueba.png"))
 }
 
 generadorAutos()
@@ -24,17 +26,24 @@ generadorAutos()
 const autosDisponibles = document.getElementById("autos-disponibles")
 const autoSelec = document.getElementById("auto-seleccionado")
 
-
-
+const autoDisplay = document.querySelector("#auto-display")
+const crearSeleccionado = (auto)=>{
+    debugger
+    const div = document.createElement("div")
+    div.innerHTML = `<h2>${auto.modelo}</h2><img src="${auto.img}"><p>Costo por día $${auto.valor}</p>`
+    autoDisplay.append(div)
+}
 
 function cartillaAutos(){
     for (const auto of carros){
         const div = document.createElement("div")
-        div.innerHTML = `<div class="autos-card"><img src="./media/cocheprueba.png"> <p>${auto.modelo}</p></div>`
-        div.addEventListener("click", () => {carrito.push(auto.modelo)
+        div.innerHTML = `<div class="autos-card"><img src="${auto.img}"> <p>${auto.modelo}</p></div>`
+        div.addEventListener("click", () => {
+            seleccion = auto
             guardarAuto(auto)
+            crearSeleccionado(auto)
             mostrarSwal()})
-        autosDisponibles.append(div)
+        autosDisponibles.append(div) 
     }
 } 
 cartillaAutos()
@@ -51,7 +60,6 @@ function guardarAuto(auto){
 }
 
 function mostrarAuto(){
-    debugger
     const autoMostrado = JSON.parse(localStorage.getItem("autoSeleccionado"))
     const li = document.createElement("li")
     li.innerHTML = autoMostrado.modelo
@@ -66,6 +74,4 @@ const mostrarSwal = () => {Swal.fire({
     icon: 'info'
 })}
     
-
-
 
