@@ -31,8 +31,9 @@ function cartillaAutos(){
     for (const auto of carros){
         const div = document.createElement("div")
         div.innerHTML = `<div class="autos-card"><img src="./media/cocheprueba.png"> <p>${auto.modelo}</p></div>`
-        div.addEventListener("dblclick", () => {carrito.push(auto.modelo)
-            guardarAuto(auto)})
+        div.addEventListener("click", () => {carrito.push(auto.modelo)
+            guardarAuto(auto)
+            mostrarSwal()})
         autosDisponibles.append(div)
     }
 } 

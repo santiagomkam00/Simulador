@@ -8,6 +8,8 @@ li{
 }
 
 .contenedor-autos{
+    width: 80%;
+    margin: auto;
     margin-top: 2rem;
     display: grid;
     gap: 2rem;
