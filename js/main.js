@@ -28,7 +28,6 @@ const autoSelec = document.getElementById("auto-seleccionado")
 
 const autoDisplay = document.querySelector("#auto-display")
 const crearSeleccionado = (auto)=>{
-    debugger
     const div = document.createElement("div")
     div.innerHTML = `<h2>${auto.modelo}</h2><img src="${auto.img}"><p>Costo por día $${auto.valor}</p>`
     autoDisplay.append(div)
@@ -75,3 +74,31 @@ const mostrarSwal = () => {Swal.fire({
 })}
     
 
+
+
+const retornoCardContenido = (contenido) =>{
+    const div = document.createElement("div")
+        div.innerHTML = `<div class="autos-card"><img src="${contenido.img}"> <p>${contenido.modelo}</p></div>`
+        div.addEventListener("click", () => {
+            seleccion = contenido
+            guardarAuto(contenido)
+            crearSeleccionado(contenido)
+            mostrarSwal()})
+        autosDisponibles.append(div) 
+}
+
+
+
+
+
+
+const obtenerContenido = (URL)=>{
+    let cardsAmostrar=""
+    fetch(URL)
+        .then((response)=>response.json())
+        .then((data)=>{
+            for(contenido of data){
+                cardsAmostrar += retornoCardContenido(contenido)
+            }
+        })
+}

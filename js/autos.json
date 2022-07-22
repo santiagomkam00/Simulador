@@ -1,0 +1,38 @@
+[
+{
+    "tipo":"SEDAN",
+    "modelo":"CHEVROLET CLASSIC",
+    "valor":10,
+    "img":"./media/cocheprueba.png"
+},
+{
+    "tipo":"SEDAN",
+    "modelo":"ALFA ROMEO - GIULIA",
+    "valor":50,
+    "img":"./media/cocheprueba.png"
+},
+{
+    "tipo":"SEDAN",
+    "modelo":"AUDI - A4",
+    "valor":30,
+    "img":"./media/cocheprueba.png"
+},
+{
+    "tipo":"SEDAN",
+    "modelo":"BMW - SERIE 3",
+    "valor":40,
+    "img":"./media/cocheprueba.png"
+},
+{
+    "tipo":"SEDAN",
+    "modelo":"TOYOTA - COROLLA CROSS",
+    "valor":30,
+    "img":"./media/cocheprueba.png"
+},
+{
+    "tipo":"SEDAN",
+    "modelo":"VOLKSWAGEN - GOL",
+    "valor":20,
+    "img":"./media/cocheprueba.png"
+}
+]
