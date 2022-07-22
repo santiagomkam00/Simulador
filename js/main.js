@@ -36,13 +36,11 @@ const crearSeleccionado = (auto)=>{
 /* function cartillaAutos(){
     for (const auto of carros){
         const div = document.createElement("div")
-        div.innerHTML = `<div class="autos-card"><img src="${auto.img}"> <p>${auto.modelo}</p></div>`
-        div.addEventListener("click", () => {
-            seleccion = auto
+        div.innerHTML = `<div class="autos-card"><img src="./media/cocheprueba.png"> <p>${auto.modelo}</p></div>`
+        div.addEventListener("click", () => {carrito.push(auto.modelo)
             guardarAuto(auto)
-            crearSeleccionado(auto)
             mostrarSwal()})
-        autosDisponibles.append(div) 
+        autosDisponibles.append(div)
     }
 } 
 cartillaAutos() */
