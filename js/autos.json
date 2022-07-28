@@ -3,36 +3,35 @@
     "tipo":"SEDAN",
     "modelo":"CHEVROLET CLASSIC",
     "valor":10,
-    "img":"./media/cocheprueba.png"
+    "img":"./media/cocheprueba.png",
+    "leyenda":"El Chevrolet Classic es un vehículo ideal para la familia, ya que cuenta con cuatro puertas y una amplia capacidad de traslado de pasajeros. Además, el baúl permite cargar gran cantidad de equipaje, lo que lo convierte en un automóvil perfecto, tanto para el uso diario como para los viajes en familia o con amigos. Desde las compras del supermercado, el cochecito del bebé o las mochilas de los chicos, hasta las valijas repletas de ropa para las vacaciones, todo cabe en el baúl del Chevrolet Classic."
 },
 {
     "tipo":"SEDAN",
-    "modelo":"ALFA ROMEO - GIULIA",
+    "modelo":"CHEVROLET ONIX MODELO 2022",
     "valor":50,
-    "img":"./media/cocheprueba.png"
+    "img":"./media/cocheprueba.png",
+    "leyenda":"Onix 2022 es un sedán que está un paso adelante en todos los aspectos ya que combina el diseño más moderno de Chevrolet con un motor Turbo Eficiente que optimiza el rendimiento y la aceleración para el rebase. Además, su interior sorprende por su conectividad, diseño y comodidad."
 },
 {
     "tipo":"SEDAN",
-    "modelo":"AUDI - A4",
+    "modelo":"COROLLA - XLI 2022",
     "valor":30,
-    "img":"./media/cocheprueba.png"
+    "img":"./media/cocheprueba.png",
+    "leyenda":"Es un auto confiable y confortable tanto para conducir en ciudad – donde se destaca su confort de marcha – como para la ruta – donde sobresalen la elasticidad de su motor y su estabilidad a altas velocidades. Las versiones híbridas, además, ofrecen un importante ahorro de combustible en ciudad."
 },
 {
     "tipo":"SEDAN",
-    "modelo":"BMW - SERIE 3",
-    "valor":40,
-    "img":"./media/cocheprueba.png"
-},
-{
-    "tipo":"SEDAN",
-    "modelo":"TOYOTA - COROLLA CROSS",
+    "modelo":"TOYOTA - HILUX",
     "valor":30,
-    "img":"./media/cocheprueba.png"
+    "img":"./media/cocheprueba.png",
+    "leyenda":"Si tuviéramos que enumerar las ventajas de una camioneta Toyota Hilux 4×4 podríamos señalar aspectos como: Su tracción. Por tener un sistema 4×4 son más potentes que muchos otros vehículos. Su fuerza la hace perfecta para caminos rurales, o incluso para las empinadas vías de la sierra ecuatoriana. Si el vehículo es usado para trabajos pesados, ni se diga, este sistema de potencia ofrece seguridad tanto a los usuarios como a sus cargas. Su plataforma. Por estar diseñadas para cruzar superficies complejas, las camionetas Toyota Hilux 4×4 tienen su nivel inferior muy por encima del suelo, lo que les permite sortear dificultades del terreno. Arena, piedras, lodos… Y hasta vigilantes acostados, responsables de daños comunes en las carrocerías de vehículos más pequeños. Su rapidez. Con un sistema manual de cinco velocidades, las camionetas Toyota Hilux son capaces de pasar de 0 a 100 km/h en 10 segundos, una aceleración eficaz para un vehículo de estas proporciones. Su personalización. Las camionetas Toyota Hilux permiten a sus usuarios un alto nivel de personalización, que va desde simples adornos, hasta elementos de seguridad. La experiencia del usuario es fácil de satisfacer: su vehículo se puede hacer más alto, más luminoso y más seguro de lo que ya es."
 },
 {
     "tipo":"SEDAN",
     "modelo":"VOLKSWAGEN - GOL",
     "valor":20,
-    "img":"./media/cocheprueba.png"
+    "img":"./media/cocheprueba.png",
+    "leyenda":"Su conducción es firme y sencilla, y podrás moverte con facilidad tanto en calles amplias como estrechas gracias a su tamaño compacto y dirección responsiva, que te hará la tarea de estacionarte, dar giros y evadir todo tipo de obstáculos con facilidad. Y hablando de obstáculos, su suspensión hace un muy buen trabajo al absorber los baches, topes y demás imperfecciones de la cinta asfáltica, comunes en las calles, caminos y carreteras formoseñas."
 }
 ]

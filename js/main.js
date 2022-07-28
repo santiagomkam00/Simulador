@@ -1,35 +1,58 @@
 const carros = []
 const carrito = []
-let seleccion = []
+let seleccion
 
 class Autos{
     constructor(tipo,modelo,valor,img){
         this.tipo = tipo
         this.modelo = modelo
         this.valor = valor
-        this.img = img
     }
 
 }
 
-function generadorAutos(){
-    carros.push(new Autos("SEDAN","CHEVROLET CLASSIC",10,"./media/cocheprueba.png"))
-    carros.push(new Autos("SEDAN","ALFA ROMEO - GIULIA",50,"./media/cocheprueba.png"))
-    carros.push(new Autos("SEDAN","AUDI - A4",30,"./media/cocheprueba.png"))
-    carros.push(new Autos("SEDAN","BMW - SERIE 3",40,"./media/cocheprueba.png"))
-    carros.push(new Autos("SUV","TOYOTA - COROLLA CROSS",30,"./media/cocheprueba.png"))
-    carros.push(new Autos("SEDAN","VOLKSWAGEN - GOL",20,"./media/cocheprueba.png"))
+/* function generadorAutos(){
+    carros.push(new Autos("SEDAN","CHEVROLET CLASSIC",10))
+    carros.push(new Autos("SEDAN","ALFA ROMEO - GIULIA",50))
+    carros.push(new Autos("SEDAN","AUDI - A4",30))
+    carros.push(new Autos("SEDAN","BMW - SERIE 3",40))
+    carros.push(new Autos("SUV","TOYOTA - COROLLA CROSS",30))
+    carros.push(new Autos("SEDAN","VOLKSWAGEN - GOL",20))
 }
 
-generadorAutos()
+generadorAutos() */
 
 const autosDisponibles = document.getElementById("autos-disponibles")
 const autoSelec = document.getElementById("auto-seleccionado")
+const autodiv = document.getElementById("autos-a-seleccionar")
 
 const autoDisplay = document.querySelector("#auto-display")
 const crearSeleccionado = (auto)=>{
     const div = document.createElement("div")
-    div.innerHTML = `<h2>${auto.modelo}</h2><img src="${auto.img}"><p>Costo por día $${auto.valor}</p>`
+    div.className = 'mostrandoAuto'
+    div.innerHTML = `
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="${auto.img}" class="d-block w-80 h-60" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="${auto.img}" class="d-block w-80 h-60" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="${auto.img}" class="d-block w-80 h-60" alt="...">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+  `
     autoDisplay.append(div)
 }
 
@@ -58,14 +81,14 @@ function guardarAuto(auto){
     
 }
 
-function mostrarAuto(){
+/* function mostrarAuto(){
     const autoMostrado = JSON.parse(localStorage.getItem("autoSeleccionado"))
     const div = document.createElement("div")
     div.innerHTML = autoMostrado.modelo
     autoDisplay.append(div)
 }
 
-mostrarAuto()
+mostrarAuto() */
 
 const mostrarSwal = () => {Swal.fire({
     title:'Aqui se mostrará un cuadro de confirmacion',
@@ -87,11 +110,51 @@ const obtenerContenido = (URL)=>{
 
 const retornoCardContenido = (contenido) =>{
     const div = document.createElement("div")
-        div.innerHTML = `<div class="autos-card"><img src="${contenido.img}"> <p>${contenido.modelo}</p></div>`
+        div.innerHTML = `
+                        <div class="autos-card">
+                        <img src="${contenido.img}">
+                            <div class="auto-texto">
+                                <p>${contenido.modelo}</p>
+                                <p>Valor por día: $${contenido.valor}</p>
+                            </div>
+                        </div>`
         div.addEventListener("click", () => {
             seleccion = contenido
             guardarAuto(contenido)
-            crearSeleccionado(contenido)
-            mostrarSwal()})
+            /*   */
+            /* mostrarSwal() */
+            autodiv.className = 'mostrandoAuto'
+            autodiv.innerHTML = `
+            <h2 class="text-center">${contenido.modelo}</h2>
+            <div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="${contenido.img}" class="d-block w-80 h-60" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="${contenido.img}" class="d-block w-80 h-60" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="${contenido.img}" class="d-block w-80 h-60" alt="...">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                    <div>
+                        <p>${contenido.leyenda}</p>
+                    </div>
+                </div>`})
         autosDisponibles.append(div) 
+        
 }
+
+const inputCarro = document.getElementById('modelo-encarro')
+    

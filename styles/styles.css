@@ -9,7 +9,7 @@ li{
 
 .contenedor-autos{
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     margin-top: 2rem;
     display: grid;
     gap: 2rem;
@@ -19,23 +19,68 @@ li{
 }
 
 .contenedor-autos .autos-card{
-    width: 90%;
+    width: 100%;
     height: 25vh;
     cursor: pointer;
-}
-.contenedor-autos .autos-card{
     margin: 5px;
 }
 
 .contenedor-autos .autos-card img{
-    width: 90%;
+    width: 100%;
     height: 80%;
     position: relative;
 }
 
-.contenedor-autos .autos-card p{
+.contenedor-autos .autos-card .auto-texto{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* .contenedor-autos .autos-card p{
     position: absolute;
     font-size: 2rem;
     font-weight: bold;
     color: black; 
+} */
+
+/* .seleccion{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 0px auto;
+}
+
+/* .seleccion .autos-a-seleccionar{
+    width: 70%;
+} */ */
+
+.mostrandoAuto{
+    width: 80%;
+    margin: 0 auto;
+    height: 40vh;
+}
+
+ .mostrandoAuto h2{
+    width: 40%;
+    padding: 2rem;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.mostrandoAuto img{
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+.mostrandoAuto p {
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
 }
