@@ -1,6 +1,5 @@
 const carros = []
 const carrito = []
-let seleccion
 
 class Autos{
     constructor(tipo,modelo,valor,img){
@@ -11,16 +10,15 @@ class Autos{
 
 }
 
-/* function generadorAutos(){
+function generadorAutos(){
     carros.push(new Autos("SEDAN","CHEVROLET CLASSIC",10))
-    carros.push(new Autos("SEDAN","ALFA ROMEO - GIULIA",50))
-    carros.push(new Autos("SEDAN","AUDI - A4",30))
-    carros.push(new Autos("SEDAN","BMW - SERIE 3",40))
-    carros.push(new Autos("SUV","TOYOTA - COROLLA CROSS",30))
-    carros.push(new Autos("SEDAN","VOLKSWAGEN - GOL",20))
+    carros.push(new Autos("SEDAN","CHEVROLET ONIX MODELO 2022",15))
+    carros.push(new Autos("SEDAN","COROLLA - XLI 2022",20))
+    carros.push(new Autos("SEDAN","TOYOTA - HILUX",20))
+    carros.push(new Autos("SUV","VOLKSWAGEN - GOL",15))
 }
 
-generadorAutos() */
+generadorAutos()
 
 const autosDisponibles = document.getElementById("autos-disponibles")
 const autoSelec = document.getElementById("auto-seleccionado")
@@ -56,46 +54,15 @@ const crearSeleccionado = (auto)=>{
     autoDisplay.append(div)
 }
 
-/* function cartillaAutos(){
-    for (const auto of carros){
-        const div = document.createElement("div")
-        div.innerHTML = `<div class="autos-card"><img src="${auto.img}"> <p>${auto.modelo}</p></div>`
-        div.addEventListener("click", () => {
-            seleccion = auto
-            guardarAuto(auto)
-            crearSeleccionado(auto)
-            mostrarSwal()})
-        autosDisponibles.append(div) 
-    }
-} 
-cartillaAutos() */
-
-function guardarAuto(auto){
+function guardarAlquiler(auto){
     const autoGuardado = {
-        tipo : auto.tipo,
         modelo : auto.modelo,
-        valor : auto.valor
+        dias : auto.dias,
     }
 
-    localStorage.setItem("autoSeleccionado",JSON.stringify(autoGuardado))
+    localStorage.setItem("autoAlquilado",JSON.stringify(autoGuardado))
     
 }
-
-/* function mostrarAuto(){
-    const autoMostrado = JSON.parse(localStorage.getItem("autoSeleccionado"))
-    const div = document.createElement("div")
-    div.innerHTML = autoMostrado.modelo
-    autoDisplay.append(div)
-}
-
-mostrarAuto() */
-
-const mostrarSwal = () => {Swal.fire({
-    title:'Aqui se mostrará un cuadro de confirmacion',
-    text: 'De confirmarse, se agregará al carrito',
-    icon: 'info'
-})}
-    
 
 const obtenerContenido = (URL)=>{
     let cardsAmostrar=""
@@ -119,24 +86,20 @@ const retornoCardContenido = (contenido) =>{
                             </div>
                         </div>`
         div.addEventListener("click", () => {
-            seleccion = contenido
-            guardarAuto(contenido)
-            /*   */
-            /* mostrarSwal() */
             autodiv.className = 'mostrandoAuto'
             autodiv.innerHTML = `
-            <h2 class="text-center">${contenido.modelo}</h2>
             <div>
+            <h2 class="text-center">${contenido.modelo}</h2>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="${contenido.img}" class="d-block w-80 h-60" alt="...">
+                    <img src="${contenido.img}" class="d-block w-60 h-50" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="${contenido.img}" class="d-block w-80 h-60" alt="...">
+                    <img src="${contenido.img}" class="d-block w-60 h-50" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="${contenido.img}" class="d-block w-80 h-60" alt="...">
+                    <img src="${contenido.img}" class="d-block w-60 h-50" alt="...">
                 </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -148,13 +111,112 @@ const retornoCardContenido = (contenido) =>{
                 <span class="visually-hidden">Next</span>
                 </button>
                 </div>
-                    <div>
-                        <p>${contenido.leyenda}</p>
-                    </div>
-                </div>`})
+                </div>
+                <div>
+                <p class="leyenda">${contenido.leyenda}</p>
+            </div>`})
         autosDisponibles.append(div) 
         
 }
 
-const inputCarro = document.getElementById('modelo-encarro')
-    
+const autoCotizar = document.getElementById('select-auto')
+const dias = document.getElementById('dias')
+const button = document.getElementById('button')
+    button.addEventListener('click', ()=>{
+        if (autoCotizar.value == 0 || dias.value==''){
+            Swal.fire({
+                icon: 'error',
+                tittle: 'Error crítico',
+                text: 'Debe seleccionar un auto y declarar cuantos días lo querrá para poder cotizar'
+            })
+        } else{
+            let valor
+            let auto
+            switch(autoCotizar.value){
+                case '1':
+                    valor = carros[0].valor*dias.value
+                    auto = {
+                        modelo : autoCotizar.value,
+                        dias : dias.value,
+                    }
+                    guardarAlquiler(auto)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cotizacion exitosa',
+                        text: `Eligio el auto: ${carros[0].modelo}
+                                Abonará $${valor} en total`
+                    })
+                break
+                case '2':
+                    valor = carros[1].valor*dias.value
+                    auto = {
+                        modelo : autoCotizar.value,
+                        dias : dias.value
+                    }
+                    guardarAlquiler(auto)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cotizacion exitosa',
+                        text: `Eligio el auto: ${carros[1].modelo}
+                                Abonará $${valor} en total`
+                    })
+                break
+                case '3':
+                    valor = carros[2].valor*dias.value
+                    auto = {
+                        modelo : autoCotizar.value,
+                        dias : dias.value
+                    }
+                    guardarAlquiler(auto)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cotizacion exitosa',
+                        text: `Eligio el auto: ${carros[2].modelo}
+                                Abonará $${valor} en total`
+                    })
+                break
+                case '4':
+                    valor = carros[3].valor*dias.value
+                    auto = {
+                        modelo : autoCotizar.value,
+                        dias : dias.value
+                    }
+                    guardarAlquiler(auto)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cotizacion exitosa',
+                        text: `Eligio el auto: ${carros[3].modelo}
+                                Abonará $${valor} en total`
+                    })
+                break
+                case '5':
+                    valor = carros[4].valor*dias.value
+                    auto = {
+                        modelo : autoCotizar.value,
+                        dias : dias.value
+                    }
+                    guardarAlquiler(auto)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cotizacion exitosa',
+                        text: `Eligio el auto: ${carros[4].modelo}
+                                Abonará $${valor} en total`
+                    })
+                break
+                default: Swal.fire({
+                    icon: 'warning',
+                    title: 'ERROR',
+                    text: 'No selecciono la opcion correcta'
+                })   
+            }
+        }
+
+    })
+
+alquilado()
+    function alquilado(){
+        debugger
+        const recuperarAlquilado = JSON.parse(localStorage.getItem('autoAlquilado'))
+        autoCotizar.value = recuperarAlquilado.modelo
+        dias.value = recuperarAlquilado.dias
+    }

@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@600&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
-li{
-    cursor: pointer;
+
+body{
+    background-color: #ffe5d9;
+}
+
+header nav{
+    background-color: #d8e2dc;
 }
 
 .contenedor-autos{
@@ -36,6 +43,7 @@ li{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* .contenedor-autos .autos-card p{
@@ -56,13 +64,14 @@ li{
 
 /* .seleccion .autos-a-seleccionar{
     width: 70%;
-} */ */
+} */ 
 
-.mostrandoAuto{
+/* .mostrandoAuto{
     width: 80%;
     margin: 0 auto;
     height: 40vh;
 }
+
 
  .mostrandoAuto h2{
     width: 40%;
@@ -72,8 +81,8 @@ li{
 }
 
 .mostrandoAuto img{
-    width: 80%;
-    height: 70%;
+    width: 50%;
+    height: 60%;
     margin: 0 auto;
 }
 
@@ -81,6 +90,72 @@ li{
     text-align: justify;
     width: 80%;
     margin: 0 auto;
-    font-size: 1.5rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+} */
+
+.mostrandoAuto{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
 }
+
+.mostrandoAuto .carousel-item img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.mostrandoAuto .carousel-item p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor form{
+    display: flex;
+    padding: 5px;
+}
+
+.contenedor form .dias{
+    width: 20%;
+    padding: 5px;;
+}
+.contenedor form .dias input{
+    width: 100%;
+}
+
+.enviar{
+    width: 40%;
+    margin: 0 auto;
+}
+.enviar button{
+    width: 100%;
+    border-radius: 8%;
+    color: #F2F4F5;
+    background-color:rgba(80, 83, 97, 0.685);
+}
+
+
+
+/* .contenedor .columna1{
+    width: 30%;
+    padding: 1.5rem;
+    display: flex;
+}
+.contenedor .columna1 .numeros{
+    width: 30%;
+    padding: 5px;
+}
+
+.contenedor .columna1 .numeros input{
+    width: 100%;
+}
+ */
