@@ -46,54 +46,6 @@ header nav{
     font-family: 'Open Sans', sans-serif;
 }
 
-/* .contenedor-autos .autos-card p{
-    position: absolute;
-    font-size: 2rem;
-    font-weight: bold;
-    color: black; 
-} */
-
-/* .seleccion{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    margin: 0px auto;
-}
-
-/* .seleccion .autos-a-seleccionar{
-    width: 70%;
-} */ 
-
-/* .mostrandoAuto{
-    width: 80%;
-    margin: 0 auto;
-    height: 40vh;
-}
-
-
- .mostrandoAuto h2{
-    width: 40%;
-    padding: 2rem;
-    margin: 0 auto;
-    font-size: 2rem;
-}
-
-.mostrandoAuto img{
-    width: 50%;
-    height: 60%;
-    margin: 0 auto;
-}
-
-.mostrandoAuto p {
-    text-align: justify;
-    width: 80%;
-    margin: 0 auto;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-} */
-
 .mostrandoAuto{
     display: grid;
     grid-template-columns:1fr 1fr;
@@ -144,18 +96,20 @@ header nav{
 }
 
 
-
-/* .contenedor .columna1{
-    width: 30%;
-    padding: 1.5rem;
-    display: flex;
-}
-.contenedor .columna1 .numeros{
-    width: 30%;
-    padding: 5px;
+footer{
+    width: 10%;
+    margin: 2rem auto;
 }
 
-.contenedor .columna1 .numeros input{
+footer ul {
     width: 100%;
 }
- */
+
+footer ul li{
+    display: inline-block;
+    margin: 5px;
+}
+footer ul li img{
+    width: 2rem;
+    height: 2rem;
+}
