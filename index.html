@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simulador de Servicios</title>
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
    <link rel="stylesheet" href="./styles/styles.css">
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -12,13 +13,13 @@
    <script defer src="./js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-light">
+    <body>
         <header>
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div class="col-2">
                         <a class="navbar-brand fs-5 fw-bold" href="#">
-                          <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                          <img src="./media/favicon.ico" alt="" width="30" height="24" class="d-inline-block align-text-top">
                           RENTAL CARS
                         </a>
                       </div>
@@ -49,14 +50,48 @@
     <section>
         <h2 class="text-center fs-5">Exploremos juntos <span class="text-bg-primary">FORMOSA</span></h2>
     </section>
+
+    
     <div class="contenedor-autos"id="autos-disponibles">
       
     </div>
-    <div id="auto-display">
-        <h2 class="text-center m-5">Auto seleccionado</h2>
+    <div class="auto-display" id="auto-display">
+        <div class="autos-a-seleccionar" id="autos-a-seleccionar">
+        </div>
+        <div class="dentrodisplay"></div>
     </div>
+    <section class="seleccion">
+      <h2 class="text-center">Cotice el servicio</h2>
+      <div class="contenedor" id="carritoservicio">
+        <div class="columna">
+          <form>
+            <select class="form-select" aria-label="Default select example" id="select-auto">
+              <option value="0" selected>Seleccione el auto deseado</option>
+              <option value="1">CHEVROLET CLASSIC</option>
+              <option value="2">CHEVROLET ONIX MODELO 2022</option>
+              <option value="3">COROLLA - XLI 2022</option>
+              <option value="4">TOYOTA - HILUX</option>
+              <option value="5">VOLKSWAGEN - GOL</option>
+            </select>
+            <label class="dias">
+              <input type="number" name="dias" id="dias" placeholder="DIAS">
+            </label>
+          </form>
+          <div class="enviar">
+            <button id="button">COTIZAR</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    
     </main>
     <footer>
+      <ul>
+        <li><a href="#"><img src="./media/logotipo-de-instagram.png" alt=""></a></li>
+        <li><a href="#"><img src="./media/facebook.png" alt=""></a></li>
+        <li><a href="#"><img src="./media/whatsapp.png" alt=""></a></li>
+      </ul>
     </footer>
   </body>
 </html>

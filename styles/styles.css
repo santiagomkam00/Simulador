@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@600&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
-li{
-    cursor: pointer;
+
+body{
+    background-color: #ffe5d9;
+}
+
+header nav{
+    background-color: #d8e2dc;
 }
 
 .contenedor-autos{
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     margin-top: 2rem;
     display: grid;
     gap: 2rem;
@@ -19,23 +26,90 @@ li{
 }
 
 .contenedor-autos .autos-card{
-    width: 90%;
+    width: 100%;
     height: 25vh;
     cursor: pointer;
-}
-.contenedor-autos .autos-card{
     margin: 5px;
 }
 
 .contenedor-autos .autos-card img{
-    width: 90%;
+    width: 100%;
     height: 80%;
     position: relative;
 }
 
-.contenedor-autos .autos-card p{
-    position: absolute;
-    font-size: 2rem;
-    font-weight: bold;
-    color: black; 
+.contenedor-autos .autos-card .auto-texto{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mostrandoAuto{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.mostrandoAuto .carousel-item img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.mostrandoAuto .carousel-item p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor form{
+    display: flex;
+    padding: 5px;
+}
+
+.contenedor form .dias{
+    width: 20%;
+    padding: 5px;;
+}
+.contenedor form .dias input{
+    width: 100%;
+}
+
+.enviar{
+    width: 40%;
+    margin: 0 auto;
+}
+.enviar button{
+    width: 100%;
+    border-radius: 8%;
+    color: #F2F4F5;
+    background-color:rgba(80, 83, 97, 0.685);
+}
+
+
+footer{
+    width: 10%;
+    margin: 2rem auto;
+}
+
+footer ul {
+    width: 100%;
+}
+
+footer ul li{
+    display: inline-block;
+    margin: 5px;
+}
+footer ul li img{
+    width: 2rem;
+    height: 2rem;
 }
